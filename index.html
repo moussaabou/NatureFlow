@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoNature - Sustainable Living Made Simple</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&family=Noto+Sans+Arabic:wght@300;400;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -27,10 +27,16 @@
                 <span>EcoNature</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#benefits">Benefits</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                <li><a href="#products" data-en="Products" data-ar="المنتجات">Products</a></li>
+                <li><a href="#benefits" data-en="Benefits" data-ar="الفوائد">Benefits</a></li>
+                <li><a href="#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+                <li class="language-toggle">
+                    <button id="languageToggle" class="lang-btn">
+                        <i class="fas fa-globe"></i>
+                        <span class="lang-text">العربية</span>
+                    </button>
+                </li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -48,21 +54,21 @@
                 <h1 class="hero-title">
                     <span class="eco-badge">
                         <i class="fas fa-leaf"></i>
-                        100% Eco-Friendly
+                        <span data-en="100% Eco-Friendly" data-ar="صديق للبيئة ١٠٠٪">100% Eco-Friendly</span>
                     </span>
-                    Sustainable Living Made Simple
+                    <span data-en="Sustainable Living Made Simple" data-ar="حياة مستدامة بطريقة بسيطة">Sustainable Living Made Simple</span>
                 </h1>
-                <p class="hero-description">
+                <p class="hero-description" data-en="Discover our premium collection of eco-friendly products designed to help you live sustainably without compromising on quality. From reusable essentials to organic skincare, make every choice count for our planet." data-ar="اكتشف مجموعتنا المتميزة من المنتجات الصديقة للبيئة المصممة لمساعدتك على العيش بطريقة مستدامة دون التنازل عن الجودة. من الأساسيات القابلة لإعادة الاستخدام إلى منتجات العناية بالبشرة الطبيعية، اجعل كل خيار مهمًا لكوكبنا.">
                     Discover our premium collection of eco-friendly products designed to help you live sustainably without compromising on quality. From reusable essentials to organic skincare, make every choice count for our planet.
                 </p>
                 <div class="hero-buttons">
                     <button class="btn-primary">
                         <i class="fas fa-shopping-bag"></i>
-                        Shop Now
+                        <span data-en="Shop Now" data-ar="تسوق الآن">Shop Now</span>
                     </button>
                     <button class="btn-secondary">
                         <i class="fas fa-play"></i>
-                        Learn More
+                        <span data-en="Learn More" data-ar="اعرف المزيد">Learn More</span>
                     </button>
                 </div>
             </div>
@@ -82,8 +88,8 @@
     <section id="products" class="products">
         <div class="container">
             <div class="section-header">
-                <h2>Our Eco-Friendly Collection</h2>
-                <p>Carefully curated products that make a positive impact on both your life and the environment</p>
+                <h2 data-en="Our Eco-Friendly Collection" data-ar="مجموعتنا الصديقة للبيئة">Our Eco-Friendly Collection</h2>
+                <p data-en="Carefully curated products that make a positive impact on both your life and the environment" data-ar="منتجات مختارة بعناية تحدث تأثيرًا إيجابيًا على حياتك والبيئة">Carefully curated products that make a positive impact on both your life and the environment</p>
             </div>
             <div class="product-grid">
                 <div class="product-card">
@@ -94,11 +100,11 @@
                         </div>
                     </div>
                     <div class="product-info">
-                        <h3>Reusable Water Bottles</h3>
-                        <p>Premium stainless steel bottles that keep your drinks at the perfect temperature while reducing plastic waste.</p>
+                        <h3 data-en="Reusable Water Bottles" data-ar="زجاجات المياه القابلة لإعادة الاستخدام">Reusable Water Bottles</h3>
+                        <p data-en="Premium stainless steel bottles that keep your drinks at the perfect temperature while reducing plastic waste." data-ar="زجاجات من الستانلس ستيل عالية الجودة تحافظ على مشروباتك في درجة الحرارة المثالية بينما تقلل من النفايات البلاستيكية.">Premium stainless steel bottles that keep your drinks at the perfect temperature while reducing plastic waste.</p>
                         <div class="eco-features">
-                            <span class="feature"><i class="fas fa-leaf"></i> BPA-Free</span>
-                            <span class="feature"><i class="fas fa-recycle"></i> Recyclable</span>
+                            <span class="feature"><i class="fas fa-leaf"></i> <span data-en="BPA-Free" data-ar="خالي من BPA">BPA-Free</span></span>
+                            <span class="feature"><i class="fas fa-recycle"></i> <span data-en="Recyclable" data-ar="قابل للتدوير">Recyclable</span></span>
                         </div>
                     </div>
                 </div>
@@ -111,11 +117,11 @@
                         </div>
                     </div>
                     <div class="product-info">
-                        <h3>Organic Skincare</h3>
-                        <p>Natural, cruelty-free skincare products made with organic ingredients for healthy, radiant skin.</p>
+                        <h3 data-en="Organic Skincare" data-ar="منتجات العناية بالبشرة الطبيعية">Organic Skincare</h3>
+                        <p data-en="Natural, cruelty-free skincare products made with organic ingredients for healthy, radiant skin." data-ar="منتجات طبيعية للعناية بالبشرة خالية من القسوة على الحيوانات مصنوعة من مكونات عضوية لبشرة صحية ومشرقة.">Natural, cruelty-free skincare products made with organic ingredients for healthy, radiant skin.</p>
                         <div class="eco-features">
-                            <span class="feature"><i class="fas fa-seedling"></i> Organic</span>
-                            <span class="feature"><i class="fas fa-heart"></i> Cruelty-Free</span>
+                            <span class="feature"><i class="fas fa-seedling"></i> <span data-en="Organic" data-ar="عضوي">Organic</span></span>
+                            <span class="feature"><i class="fas fa-heart"></i> <span data-en="Cruelty-Free" data-ar="خالي من القسوة">Cruelty-Free</span></span>
                         </div>
                     </div>
                 </div>
@@ -128,11 +134,11 @@
                         </div>
                     </div>
                     <div class="product-info">
-                        <h3>Sustainable Accessories</h3>
-                        <p>Stylish accessories made from recycled and sustainable materials for the conscious consumer.</p>
+                        <h3 data-en="Sustainable Accessories" data-ar="الإكسسوارات المستدامة">Sustainable Accessories</h3>
+                        <p data-en="Stylish accessories made from recycled and sustainable materials for the conscious consumer." data-ar="إكسسوارات أنيقة مصنوعة من مواد معاد تدويرها ومستدامة للمستهلك الواعي.">Stylish accessories made from recycled and sustainable materials for the conscious consumer.</p>
                         <div class="eco-features">
-                            <span class="feature"><i class="fas fa-globe"></i> Sustainable</span>
-                            <span class="feature"><i class="fas fa-award"></i> Certified</span>
+                            <span class="feature"><i class="fas fa-globe"></i> <span data-en="Sustainable" data-ar="مستدام">Sustainable</span></span>
+                            <span class="feature"><i class="fas fa-award"></i> <span data-en="Certified" data-ar="معتمد">Certified</span></span>
                         </div>
                     </div>
                 </div>
@@ -146,8 +152,8 @@
             <div class="benefits-content">
                 <div class="benefits-text">
                     <div class="section-header">
-                        <h2>Why Choose Eco-Friendly?</h2>
-                        <p>Every sustainable choice you make creates a ripple effect of positive change for our planet</p>
+                        <h2 data-en="Why Choose Eco-Friendly?" data-ar="لماذا نختار الصديق للبيئة؟">Why Choose Eco-Friendly?</h2>
+                        <p data-en="Every sustainable choice you make creates a ripple effect of positive change for our planet" data-ar="كل خيار مستدام تتخذه يخلق تأثيرًا إيجابيًا متتاليًا لكوكبنا">Every sustainable choice you make creates a ripple effect of positive change for our planet</p>
                     </div>
                     <div class="benefits-list">
                         <div class="benefit-item">
@@ -155,8 +161,8 @@
                                 <i class="fas fa-leaf"></i>
                             </div>
                             <div class="benefit-content">
-                                <h3>Reduce Environmental Impact</h3>
-                                <p>Our products help reduce waste, conserve resources, and minimize your carbon footprint.</p>
+                                <h3 data-en="Reduce Environmental Impact" data-ar="تقليل التأثير البيئي">Reduce Environmental Impact</h3>
+                                <p data-en="Our products help reduce waste, conserve resources, and minimize your carbon footprint." data-ar="منتجاتنا تساعد في تقليل النفايات والحفاظ على الموارد وتقليل بصمتك الكربونية.">Our products help reduce waste, conserve resources, and minimize your carbon footprint.</p>
                             </div>
                         </div>
                         <div class="benefit-item">
@@ -224,8 +230,8 @@
         <div class="container">
             <div class="contact-content">
                 <div class="contact-info">
-                    <h2>Start Your Eco Journey Today</h2>
-                    <p>Ready to make a positive impact? Connect with us and discover how easy sustainable living can be.</p>
+                    <h2 data-en="Start Your Eco Journey Today" data-ar="ابدأ رحلتك البيئية اليوم">Start Your Eco Journey Today</h2>
+                    <p data-en="Ready to make a positive impact? Connect with us and discover how easy sustainable living can be." data-ar="مستعد لإحداث تأثير إيجابي؟ تواصل معنا واكتشف كم يمكن أن تكون الحياة المستدامة سهلة.">Ready to make a positive impact? Connect with us and discover how easy sustainable living can be.</p>
                     <div class="contact-details">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>

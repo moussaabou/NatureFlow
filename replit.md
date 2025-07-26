@@ -6,7 +6,8 @@ EcoNature is a static website promoting sustainable living products and practice
 
 ## User Preferences
 
-Preferred communication style: Simple, everyday language.
+- Preferred communication style: Simple, everyday language
+- Language support: English and Arabic with RTL support
 
 ## System Architecture
 
@@ -44,6 +45,9 @@ This is a client-side only web application with no backend infrastructure. The a
 - Dynamic navbar styling on scroll
 - Intersection Observer for scroll-based animations
 - Event delegation for navigation menu interactions
+- Multi-language support (English/Arabic) with RTL text direction
+- Language preference persistence using localStorage
+- Dynamic content translation system
 
 ## Data Flow
 

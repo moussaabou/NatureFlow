@@ -198,6 +198,108 @@ h1, h2, h3, h4, h5, h6 {
   transition: var(--transition);
 }
 
+/* Language Toggle Styles */
+.language-toggle {
+  margin-left: 1rem;
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--highlight-color);
+  color: var(--white);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+  font-size: 0.9rem;
+}
+
+.lang-btn:hover {
+  background: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.lang-text {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .nav-container {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .nav-menu {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero-content {
+  text-align: right;
+}
+
+[dir="rtl"] .benefits-content,
+[dir="rtl"] .contact-content {
+  direction: rtl;
+}
+
+[dir="rtl"] .benefit-item {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[dir="rtl"] .contact-item {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[dir="rtl"] .footer-content {
+  direction: rtl;
+}
+
+[dir="rtl"] .nav-logo {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .eco-badge,
+[dir="rtl"] .sustainability-badge {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero-buttons {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .btn-primary,
+[dir="rtl"] .btn-secondary {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .social-links {
+  flex-direction: row-reverse;
+}
+
+/* Arabic font styling */
+[dir="rtl"] {
+  font-family: 'Noto Sans Arabic', 'Open Sans', sans-serif;
+}
+
+[dir="rtl"] h1, 
+[dir="rtl"] h2, 
+[dir="rtl"] h3, 
+[dir="rtl"] h4, 
+[dir="rtl"] h5, 
+[dir="rtl"] h6 {
+  font-family: 'Amiri', 'Montserrat', serif;
+  font-weight: 700;
+}
+
 /* Hero Section */
 .hero {
   min-height: 100vh;

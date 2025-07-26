@@ -381,6 +381,72 @@ function debounce(func, wait) {
 // Apply debounce to scroll handlers
 window.addEventListener('scroll', debounce(handleScrollAnimation, 10));
 
+// Language switching functionality
+let currentLanguage = 'en';
+
+const translations = {
+    en: {
+        langToggleText: 'العربية',
+        title: 'EcoNature - Sustainable Living Made Simple'
+    },
+    ar: {
+        langToggleText: 'English',
+        title: 'إيكو ناتشر - حياة مستدامة بطريقة بسيطة'
+    }
+};
+
+function switchLanguage() {
+    const newLanguage = currentLanguage === 'en' ? 'ar' : 'en';
+    const elementsWithTranslations = document.querySelectorAll('[data-en][data-ar]');
+    
+    // Update text content for all translatable elements
+    elementsWithTranslations.forEach(element => {
+        const text = element.getAttribute(`data-${newLanguage}`);
+        if (text) {
+            element.textContent = text;
+        }
+    });
+    
+    // Update document direction and language
+    document.documentElement.dir = newLanguage === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = newLanguage;
+    
+    // Update page title
+    document.title = translations[newLanguage].title;
+    
+    // Update language toggle button text
+    const langToggleText = document.querySelector('.lang-text');
+    if (langToggleText) {
+        langToggleText.textContent = translations[newLanguage].langToggleText;
+    }
+    
+    // Update current language
+    currentLanguage = newLanguage;
+    
+    // Store language preference
+    localStorage.setItem('preferredLanguage', newLanguage);
+    
+    // Show notification
+    const message = newLanguage === 'ar' ? 
+        'تم تغيير اللغة إلى العربية' : 
+        'Language changed to English';
+    showNotification(message, 'success');
+}
+
+// Language toggle event listener
+document.addEventListener('DOMContentLoaded', () => {
+    const languageToggle = document.getElementById('languageToggle');
+    if (languageToggle) {
+        languageToggle.addEventListener('click', switchLanguage);
+    }
+    
+    // Load saved language preference
+    const savedLanguage = localStorage.getItem('preferredLanguage');
+    if (savedLanguage && savedLanguage !== currentLanguage) {
+        switchLanguage();
+    }
+});
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     console.log('EcoNature website loaded successfully!');
