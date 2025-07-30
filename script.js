@@ -270,15 +270,19 @@ window.addEventListener('scroll', handleScrollAnimation);
 // Product showcase rotation effect
 let showcaseIndex = 0;
 const showcaseImages = [
-    'https://pixabay.com/get/g4783ae9dd7776cfa276e8a266e1dddd936d0ae7dea1f8eee5591e2724583f26399f629d7389a0c802271c23cf84b48c88297df46e121bb2248157e444358b4ec_1280.jpg',
-    'https://pixabay.com/get/g88f7e183c11a5e4d0198ef40ef1cd69a5719d1b3e5781e92149d1021cdd0fb15fd4576ba8be0e6b044933de3dc895d516fe7a426dfc1cafd6d30b69937a2365f_1280.jpg',
-    'https://pixabay.com/get/gc2b98aca3a4187b867ee6ac0d48698bdfe1cc6f6975940dffec5726864b794adba3d30ee02b962c345cd026ea7ce1e30dec1fb610d74061563ba82f1b1a9e3b1_1280.jpg'
+    'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1618946797063-fe1f5d9c3b3a?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&h=600&fit=crop'
 ];
 
 const showcaseBadges = [
-    { icon: 'fas fa-recycle', text: 'Plastic-Free' },
-    { icon: 'fas fa-seedling', text: 'Organic' },
-    { icon: 'fas fa-globe', text: 'Sustainable' }
+    { icon: 'fas fa-recycle', text: 'Plastic-Free', textAr: 'خالي من البلاستيك' },
+    { icon: 'fas fa-seedling', text: 'Organic', textAr: 'عضوي' },
+    { icon: 'fas fa-globe', text: 'Sustainable', textAr: 'مستدام' },
+    { icon: 'fas fa-leaf', text: 'Eco-Friendly', textAr: 'صديق للبيئة' },
+    { icon: 'fas fa-heart', text: 'Natural', textAr: 'طبيعي' }
 ];
 
 function rotateShowcase() {
@@ -291,9 +295,12 @@ function rotateShowcase() {
         setTimeout(() => {
             showcaseIndex = (showcaseIndex + 1) % showcaseImages.length;
             showcaseImg.src = showcaseImages[showcaseIndex];
+            const badgeText = currentLanguage === 'ar' ? 
+                showcaseBadges[showcaseIndex].textAr : 
+                showcaseBadges[showcaseIndex].text;
             badge.innerHTML = `
                 <i class="${showcaseBadges[showcaseIndex].icon}"></i>
-                <span>${showcaseBadges[showcaseIndex].text}</span>
+                <span>${badgeText}</span>
             `;
             showcaseImg.style.opacity = '1';
         }, 300);
@@ -444,6 +451,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedLanguage = localStorage.getItem('preferredLanguage');
     if (savedLanguage && savedLanguage !== currentLanguage) {
         switchLanguage();
+    }
+});
+
+// Featured product image gallery interaction
+document.addEventListener('DOMContentLoaded', () => {
+    const mainImage = document.querySelector('.main-image img');
+    const galleryImages = document.querySelectorAll('.image-gallery img');
+    
+    if (mainImage && galleryImages.length > 0) {
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                const tempSrc = mainImage.src;
+                mainImage.style.opacity = '0.5';
+                
+                setTimeout(() => {
+                    mainImage.src = img.src;
+                    mainImage.style.opacity = '1';
+                }, 150);
+                
+                // Optional: Update the clicked thumbnail
+                img.style.opacity = '0.7';
+                setTimeout(() => {
+                    img.style.opacity = '1';
+                }, 300);
+            });
+        });
     }
 });
 
